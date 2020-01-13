@@ -4,4 +4,5 @@ branches:
 projects:
   DeathCostBE:
     path: ""
+    icon: "death-icon-png-6-original.png"
 ...
