@@ -1,0 +1,14 @@
+##################################################################################################################################
+#################################[ DeathCost DevBuild 1.0.0 ]#####################################################################
+###############################[ Developed By AcktarOfficial ]####################################################################
+#############################[ Subscribe: https://sub2acktar.xyz ]################################################################
+##################################################################################################################################
+
+#Amount of money to remove from player when he dies
+Death-cost: '575'
+
+#message to send when he doesnr have the deathcost ransom
+bal-notenough-msg: '§l§f(§bDeath§dCost§f)§r§c All Your Money Was Taken As You Didnt Have Enough Money To Pay The DeathCost §7:§f/'
+
+#message to send to player when money gets reduce/onDeath
+msg: '§l§f(§bDeath§dCost§f)§r§c You Died And Lost {money} Nob§7!'
