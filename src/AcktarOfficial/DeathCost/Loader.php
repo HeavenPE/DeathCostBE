@@ -22,17 +22,16 @@ $this->getLogger()->info("DeathCost Has Been Enabled! ->> https://sub2acktar.xyz
 public function onPlayerDeath(PlayerDeathEvent $ev) {
     $player = $ev->getPlayer();
     $msg = $this->config->get("message");
-    $msgne = $this->config->get("bal-notenough-msg");
     $cost = $this->config->get("death-cost");
+    $percent = $this->config->get("percentage-switch")
+    $numpercent = $this->config->get("percent");
     $bal = EconomyAPI::getInstance()->myMoney($player);
    
-    if ($bal < $cost){
-    EconomyAPI::getInstance()->reduceMoney($player, $bal);
-    $reasonn = str_replace("{money}", $cost, $msgne);
-    $player->sendMessage($reasonn);
+    if ($percent == "true") {
+    $cost = $numpercent * $bal / 100;
     }
     
-    EconomyAPI::getInstance()->reduceMoney($player, $cost);
+	EconomyAPI::getInstance()->reduceMoney($player, $cost);
     $reason = str_replace("{money}", $cost, $msg);
     $player->sendMessage($reason);
       }
