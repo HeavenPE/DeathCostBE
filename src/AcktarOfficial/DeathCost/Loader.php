@@ -16,7 +16,6 @@ public function onEnable() {
 $this->saveResource("config.yml");
 $this->config = new Config($this->getDataFolder() . "config.yml");
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
-$this->getLogger()->info("DeathCost Has Been Enabled! ->> https://sub2acktar.xyz");
 }
 
 public function onPlayerDeath(PlayerDeathEvent $ev) {
@@ -31,8 +30,14 @@ public function onPlayerDeath(PlayerDeathEvent $ev) {
     $cost = $numpercent * $bal / 100;
     }
     
+    if ($bal < $cost){
+    EconomyAPI::getInstance()->reduceMoney($player, $bal);
+    $reason = str_replace("{money}", $bal, $msg);
+    $player->sendMessage($reason);
+    }else{
     EconomyAPI::getInstance()->reduceMoney($player, $cost);
     $reason = str_replace("{money}", $cost, $msg);
     $player->sendMessage($reason);
+         }
       }
  }
