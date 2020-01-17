@@ -12,4 +12,4 @@ percentage-switch: 'true'
 percent: '25'
 
 #message to send to player when money gets reduce/onDeath
-message: '§l§f(§bDeath§dCost§f)§r§c You Died And Lost {money} Nob§7!'
+message: '§l§f(§bDeath§dCost§f)§r§c You Died And Lost §7$§f{money}§c Noob§7!'
